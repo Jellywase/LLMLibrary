@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LLMLibrary")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a59e4f3f540983e67e4e0f0657f37d42e8de491")]
 [assembly: System.Reflection.AssemblyProductAttribute("LLMLibrary")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LLMLibrary")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
