@@ -13,12 +13,15 @@ namespace LLMLibrary
         readonly object lockObj = new object();
         public override Task<bool> isConnected => CheckChattable();
         bool manuallyAllowed = false;
+
+        public ModelInfo.ModelName modelName { get; set; }
+        public string modelID => ModelInfo.modelIDs[modelName];
         public override Task<IReadOnlyDictionary<string, Context>> contexts => Task.FromResult((IReadOnlyDictionary<string, Context>)_contexts);
         Dictionary<string, Context> _contexts;
 
         readonly string modelsEndpoint = "http://192.168.0.2:1234/api/v0/models";
         readonly string chatEndpoint = "http://192.168.0.2:1234/api/v0/chat/completions";
-        public LMStudioClient(ISearchEngine searchEngine) : base(searchEngine)
+        public LMStudioClient(ModelInfo.ModelName modelName, ISearchEngine searchEngine) : base(searchEngine)
         {
             _contexts = new Dictionary<string, Context>();
         }
@@ -40,14 +43,19 @@ namespace LLMLibrary
             { return false; }
 
             HttpClient client = new HttpClient();
-            var response = await client.GetStringAsync(modelsEndpoint);
-            var models = JsonSerializer.Deserialize<Dictionary<string, string>>(response);
+            var response = await client.GetStreamAsync(modelsEndpoint);
+            using var json = await JsonDocument.ParseAsync(response);
+            var models = json?.RootElement.GetProperty("data").EnumerateArray().ToList();
             if (models == null || models.Count == 0)
             { return false; }
             return true;
         }
         public override async Task<string> SendUserMessage(string chatID, string message)
         {
+            if (!await isConnected)
+            {
+                throw new InvalidOperationException("LLM server not connected");
+            }
             Context context = RegisterOrGetContext(chatID);
             context.Add(Context.Sayer.user, message);
 
@@ -56,22 +64,31 @@ namespace LLMLibrary
             var response = await client.PostAsJsonAsync(chatEndpoint, payload);
             var stream = await response.Content.ReadAsStreamAsync();
             using var responseJson = JsonDocument.Parse(stream);
-            var choices = responseJson.RootElement.GetProperty("choices");
-            string reply = choices[0].GetProperty("message").GetProperty("content").GetString() ?? "No reply..";
-
-            RecordToContext(Context.Sayer.assistant, context, reply);
+            if (responseJson.RootElement.TryGetProperty("error", out var error))
+            {
+                throw new InvalidOperationException("LLM server error: " + error.GetString());
+            }
+            string reply = string.Empty;
+            if (responseJson.RootElement.TryGetProperty("choices", out var choices))
+            {
+                reply = choices[0].GetProperty("message").GetProperty("content").GetString() ?? string.Empty;
+                RecordToContext(Context.Sayer.assistant, context, reply);
+            }
             return reply;
         }
-        public override Task SetSystemMessage(string chatID, string message)
+        public override async Task SetSystemMessage(string chatID, string message)
         {
+            if (!await isConnected)
+            {
+                throw new InvalidOperationException("LLM server not connected");
+            }
             Context context = RegisterOrGetContext(chatID);
             RecordToContext(Context.Sayer.system, context, message);
-            return Task.CompletedTask;
         }
         object BuildContextPayload(Context context)
         {
             Dictionary<string, object> payload = new();
-            payload["model"] = "your-model-name";
+            payload["model"] = modelID;
             payload["temperature"] = 0.7;
             payload["max_tokens"] = 8192;
             List<Dictionary<string, string>> messages = new();

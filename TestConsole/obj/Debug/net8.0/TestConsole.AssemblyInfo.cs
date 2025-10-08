@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("LLMLibrary")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("TestConsole")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b362c44f927f70385bb2bfcc20b7fb9babde7fd9")]
-[assembly: System.Reflection.AssemblyProductAttribute("LLMLibrary")]
-[assembly: System.Reflection.AssemblyTitleAttribute("LLMLibrary")]
+[assembly: System.Reflection.AssemblyProductAttribute("TestConsole")]
+[assembly: System.Reflection.AssemblyTitleAttribute("TestConsole")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // MSBuild WriteCodeFragment 클래스에서 생성되었습니다.

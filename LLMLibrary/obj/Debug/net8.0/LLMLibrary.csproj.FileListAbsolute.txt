@@ -9,3 +9,4 @@ C:\Users\zim__\OneDrive\OneDrive Jellywase\Coding\LLMLibrary\LLMLibrary\obj\Debu
 C:\Users\zim__\OneDrive\OneDrive Jellywase\Coding\LLMLibrary\LLMLibrary\obj\Debug\net8.0\refint\LLMLibrary.dll
 C:\Users\zim__\OneDrive\OneDrive Jellywase\Coding\LLMLibrary\LLMLibrary\obj\Debug\net8.0\LLMLibrary.pdb
 C:\Users\zim__\OneDrive\OneDrive Jellywase\Coding\LLMLibrary\LLMLibrary\obj\Debug\net8.0\ref\LLMLibrary.dll
+C:\Users\zim__\OneDrive\OneDrive Jellywase\Coding\LLMLibrary\LLMLibrary\obj\Debug\net8.0\LLMLibrary.sourcelink.json

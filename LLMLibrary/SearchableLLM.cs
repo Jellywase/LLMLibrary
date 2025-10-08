@@ -12,7 +12,7 @@ namespace LLMLibrary
         public SearchableLLM(ISearchEngine searchEngine)
         {
             this.searchEngine = searchEngine;
-            if (!searchEngine.initialized)
+            if (searchEngine != null && !searchEngine.initialized)
             {
                 searchEngine.Initialize();
             }
@@ -27,7 +27,7 @@ namespace LLMLibrary
         public abstract Task DisposeChat(string chatID);
         public Task<string> Search(string query, int maxResults = 5)
         {
-            return searchEngine.Search(query, maxResults);
+            return searchEngine?.Search(query, maxResults) ?? Task.FromResult(string.Empty);
         }
 
     }
