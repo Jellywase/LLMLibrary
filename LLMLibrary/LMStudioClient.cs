@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Net.Http.Json;
 using System.Text;
@@ -18,6 +19,8 @@ namespace LLMLibrary
         public string modelID => ModelInfo.modelIDs[modelName];
         public override Task<IReadOnlyDictionary<string, Context>> contexts => Task.FromResult((IReadOnlyDictionary<string, Context>)_contexts);
         Dictionary<string, Context> _contexts;
+
+        Task currentCall = Task<string>.FromResult(string.Empty);
 
         readonly string modelsEndpoint = "http://192.168.0.2:1234/api/v0/models";
         readonly string chatEndpoint = "http://192.168.0.2:1234/api/v0/chat/completions";
@@ -56,6 +59,28 @@ namespace LLMLibrary
             {
                 throw new InvalidOperationException("LLM server not connected");
             }
+            Task<string> nextTask;
+            lock (lockObj)
+            {
+                nextTask = currentCall.ContinueWith(async _ =>
+                {
+                    try
+                    {
+                        return await SendUserMessageInner(chatID, message);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error in LMStudioClient: " + ex.Message);
+                        throw;
+                    }
+                }).Unwrap();
+                currentCall = nextTask;
+            }
+            return await nextTask;
+        }
+
+        private async Task<string> SendUserMessageInner(string chatID, string message)
+        {
             Context context = RegisterOrGetContext(chatID);
             context.Add(Context.Sayer.user, message);
 
@@ -74,8 +99,10 @@ namespace LLMLibrary
                 reply = choices[0].GetProperty("message").GetProperty("content").GetString() ?? string.Empty;
                 RecordToContext(Context.Sayer.assistant, context, reply);
             }
+
             return reply;
         }
+
         public override async Task SetSystemMessage(string chatID, string message)
         {
             if (!await isConnected)
