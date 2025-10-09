@@ -14,13 +14,14 @@ namespace LLMLibrary
         readonly object lockObj = new object();
         public override Task<bool> isConnected => CheckChattable();
         bool manuallyAllowed = false;
+        HttpClient httpClient = new HttpClient();
 
         public ModelInfo.ModelName modelName { get; set; }
         public string modelID => ModelInfo.modelIDs[modelName];
         public override Task<IReadOnlyDictionary<string, Context>> contexts => Task.FromResult((IReadOnlyDictionary<string, Context>)_contexts);
         Dictionary<string, Context> _contexts;
 
-        Task currentCall = Task<string>.FromResult(string.Empty);
+        Task currentCall = Task.CompletedTask;
 
         readonly string modelsEndpoint = "http://192.168.0.2:1234/api/v0/models";
         readonly string chatEndpoint = "http://192.168.0.2:1234/api/v0/chat/completions";
@@ -44,21 +45,25 @@ namespace LLMLibrary
             // 인터페이스 공통성을 위해 connect하지 않으면 채팅 불가한 것으로 간주
             if (!manuallyAllowed)
             { return false; }
-
-            HttpClient client = new HttpClient();
-            var response = await client.GetStreamAsync(modelsEndpoint);
-            using var json = await JsonDocument.ParseAsync(response);
-            var models = json?.RootElement.GetProperty("data").EnumerateArray().ToList();
-            if (models == null || models.Count == 0)
-            { return false; }
+            try
+            {
+                using var response = await httpClient.GetStreamAsync(modelsEndpoint);
+                using var json = await JsonDocument.ParseAsync(response);
+                var models = json?.RootElement.GetProperty("data").EnumerateArray().ToList();
+                if (models == null || models.Count == 0)
+                { throw new Exception("No models loaded"); }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Cannot connect to LLM: " + ex.Message);
+                return false;
+            }
             return true;
         }
         public override async Task<string> SendUserMessage(string chatID, string message)
         {
             if (!await isConnected)
-            {
-                throw new InvalidOperationException("LLM server not connected");
-            }
+            { return string.Empty; }
             Task<string> nextTask;
             lock (lockObj)
             {
@@ -84,9 +89,8 @@ namespace LLMLibrary
             Context context = RegisterOrGetContext(chatID);
             context.Add(Context.Sayer.user, message);
 
-            HttpClient client = new HttpClient();
             var payload = BuildContextPayload(context);
-            var response = await client.PostAsJsonAsync(chatEndpoint, payload);
+            var response = await httpClient.PostAsJsonAsync(chatEndpoint, payload);
             var stream = await response.Content.ReadAsStreamAsync();
             using var responseJson = JsonDocument.Parse(stream);
             if (responseJson.RootElement.TryGetProperty("error", out var error))
@@ -106,9 +110,7 @@ namespace LLMLibrary
         public override async Task SetSystemMessage(string chatID, string message)
         {
             if (!await isConnected)
-            {
-                throw new InvalidOperationException("LLM server not connected");
-            }
+            { return; }
             Context context = RegisterOrGetContext(chatID);
             RecordToContext(Context.Sayer.system, context, message);
         }

@@ -8,6 +8,7 @@ public class Program
         {
             LMStudioClient llm = new(ModelInfo.ModelName.gpt_oss_20b, null);
             await llm.Connect();
+            var a = await llm.isConnected;
             await llm.SetSystemMessage("MyChat", "You are a helpful assistant1.");
             Task tsk1 = llm.SendUserMessage("MyChat", "Hello, llm!. How are you today? Today's such a great nice day. isn't it?");
             Task tsk2 = llm.SendUserMessage("MyChat", "Hello, llm!. How are you today? Today's such a great nice day. isn't it?");
