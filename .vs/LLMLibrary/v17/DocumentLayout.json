@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{7391EABB-9ED3-4201-A2E3-40D900DDF027}|LLMLibrary\\LLMLibrary.csproj|solutionrelative:llmlibrary\\lmstudioclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7391EABB-9ED3-4201-A2E3-40D900DDF027}|LLMLibrary\\LLMLibrary.csproj|c:\\users\\zim__\\onedrive\\onedrive jellywase\\coding\\llmlibrary\\llmlibrary\\searchablellm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7391EABB-9ED3-4201-A2E3-40D900DDF027}|LLMLibrary\\LLMLibrary.csproj|solutionrelative:llmlibrary\\searchablellm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7391EABB-9ED3-4201-A2E3-40D900DDF027}|LLMLibrary\\LLMLibrary.csproj|c:\\users\\zim__\\onedrive\\onedrive jellywase\\coding\\llmlibrary\\llmlibrary\\illmclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7391EABB-9ED3-4201-A2E3-40D900DDF027}|LLMLibrary\\LLMLibrary.csproj|solutionrelative:llmlibrary\\illmclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7391EABB-9ED3-4201-A2E3-40D900DDF027}|LLMLibrary\\LLMLibrary.csproj|c:\\users\\zim__\\onedrive\\onedrive jellywase\\coding\\llmlibrary\\llmlibrary\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7391EABB-9ED3-4201-A2E3-40D900DDF027}|LLMLibrary\\LLMLibrary.csproj|solutionrelative:llmlibrary\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7391EABB-9ED3-4201-A2E3-40D900DDF027}|LLMLibrary\\LLMLibrary.csproj|c:\\users\\zim__\\onedrive\\onedrive jellywase\\coding\\llmlibrary\\llmlibrary\\searchablellm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7391EABB-9ED3-4201-A2E3-40D900DDF027}|LLMLibrary\\LLMLibrary.csproj|solutionrelative:llmlibrary\\searchablellm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7391EABB-9ED3-4201-A2E3-40D900DDF027}|LLMLibrary\\LLMLibrary.csproj|c:\\users\\zim__\\onedrive\\onedrive jellywase\\coding\\llmlibrary\\llmlibrary\\isearchengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ModelInfo.cs",
               "DocumentMoniker": "C:\\Users\\zim__\\OneDrive\\OneDrive Jellywase\\Coding\\LLMLibrary\\LLMLibrary\\ModelInfo.cs",
               "RelativeDocumentMoniker": "LLMLibrary\\ModelInfo.cs",
@@ -63,7 +63,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Context.cs",
               "DocumentMoniker": "C:\\Users\\zim__\\OneDrive\\OneDrive Jellywase\\Coding\\LLMLibrary\\LLMLibrary\\Context.cs",
               "RelativeDocumentMoniker": "LLMLibrary\\Context.cs",
@@ -82,14 +82,14 @@
               "RelativeDocumentMoniker": "LLMLibrary\\LMStudioClient.cs",
               "ToolTip": "C:\\Users\\zim__\\OneDrive\\OneDrive Jellywase\\Coding\\LLMLibrary\\LLMLibrary\\LMStudioClient.cs",
               "RelativeToolTip": "LLMLibrary\\LMStudioClient.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAA3wC8AAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAAAUwCoAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-08T12:29:27.584Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "SearchableLLM.cs",
               "DocumentMoniker": "C:\\Users\\zim__\\OneDrive\\OneDrive Jellywase\\Coding\\LLMLibrary\\LLMLibrary\\SearchableLLM.cs",
               "RelativeDocumentMoniker": "LLMLibrary\\SearchableLLM.cs",
@@ -115,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ILLMClient.cs",
               "DocumentMoniker": "C:\\Users\\zim__\\OneDrive\\OneDrive Jellywase\\Coding\\LLMLibrary\\LLMLibrary\\ILLMClient.cs",
               "RelativeDocumentMoniker": "LLMLibrary\\ILLMClient.cs",

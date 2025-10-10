@@ -17,9 +17,11 @@ namespace LLMLibrary
                 searchEngine.Initialize();
             }
         }
+        public abstract ModelInfo.ModelName modelName { get; }
 
         public abstract Task<bool> isConnected { get; }
         public abstract Task<IReadOnlyDictionary<string, Context>> contexts { get; }
+
         public abstract Task Connect();
         public abstract Task Disconnect();
         public abstract Task SetSystemMessage(string chatID, string message);

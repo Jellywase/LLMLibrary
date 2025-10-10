@@ -16,9 +16,11 @@ namespace LLMLibrary
         bool manuallyAllowed = false;
         HttpClient httpClient = new HttpClient();
 
-        public ModelInfo.ModelName modelName { get; set; }
+        public override ModelInfo.ModelName modelName => modelName_I;
+        ModelInfo.ModelName modelName_I;
         public string modelID => ModelInfo.modelIDs[modelName];
         public override Task<IReadOnlyDictionary<string, Context>> contexts => Task.FromResult((IReadOnlyDictionary<string, Context>)_contexts);
+
         Dictionary<string, Context> _contexts;
 
         Task currentCall = Task.CompletedTask;
@@ -27,6 +29,7 @@ namespace LLMLibrary
         readonly string chatEndpoint = "http://192.168.0.2:1234/api/v0/chat/completions";
         public LMStudioClient(ModelInfo.ModelName modelName, ISearchEngine searchEngine) : base(searchEngine)
         {
+            modelName_I = modelName;
             _contexts = new Dictionary<string, Context>();
         }
 
