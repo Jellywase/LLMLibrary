@@ -1,27 +1,47 @@
 ﻿using LLMLibrary;
+using System.Text;
+using System.Text.Json.Nodes;
 public class Program
 {
     static object lockObj = new object();
+
     public static async Task Main(string[] args)
     {
-        //try
+        await Crawl();
+    }
+
+    private static async Task Crawl()
+    {
+        string url = "https://stackoverflow.com/questions/10646142/what-does-it-mean-to-escape-a-string";
+        HttpClient httpClient = new();
+        HttpResponseMessage response = await httpClient.GetAsync(url);
+        string html = await response.Content.ReadAsStringAsync();
+    }
+
+    private static async Task CSE()
+    {
+        HttpClient httpClient = new();
+        string apiKey = "AIzaSyDZfdGh8frPaD-N1iy-bDB_lfaEqCSQZoE";           // 발급받은 API Key
+        string cseId = "90a2780d945314e2c";             // Custom Search Engine ID
+        string query = "Apple";
+
+        string url = $"https://www.googleapis.com/customsearch/v1?q={Uri.EscapeDataString(query)}&key={apiKey}&cx={cseId}";
+        try
         {
-            LMStudioClient llm = new(ModelInfo.ModelName.gpt_oss_20b, null);
-            await llm.Connect();
-            var a = await llm.isConnected;
-            await llm.SetSystemMessage("MyChat", "You are a helpful assistant1.");
-            Task tsk1 = llm.SendUserMessage("MyChat", "Hello, llm!. How are you today? Today's such a great nice day. isn't it?");
-            Task tsk2 = llm.SendUserMessage("MyChat", "Hello, llm!. How are you today? Today's such a great nice day. isn't it?");
-            Task tsk3 = llm.SendUserMessage("MyChat", "Hello, llm!. How are you today? Today's such a great nice day. isn't it?");
+            HttpResponseMessage response = await httpClient.GetAsync(url);
+            if (response.IsSuccessStatusCode)
+            {
+                JsonNode jsonNode = JsonNode.Parse(await response.Content.ReadAsStringAsync())!;
 
-
-            Task.WaitAll(tsk1, tsk2, tsk3);
-
-            await llm.DisposeChat("MyChat");
+            }
+            else
+            {
+                Console.WriteLine($"Error in response: {response.StatusCode}");
+            }
         }
-        //catch (Exception ex)
-        //{
-        //    Console.WriteLine("LLM 오류 발생: " + ex.Message);
-        //}
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error while GetAsync: {ex.Message}");
+        }
     }
 }
