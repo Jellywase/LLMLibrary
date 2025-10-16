@@ -27,10 +27,11 @@ namespace LLMLibrary
 
         readonly string modelsEndpoint = "http://192.168.0.2:1234/api/v0/models";
         readonly string chatEndpoint = "http://192.168.0.2:1234/api/v0/chat/completions";
-        public LMStudioClient(ModelInfo.ModelName modelName, ISearchEngine searchEngine) : base(searchEngine)
+        public LMStudioClient(ModelInfo.ModelName modelName, ISearchEngine searchEngine, int timeoutLimit = 100) : base(searchEngine)
         {
             modelName_I = modelName;
             _contexts = new Dictionary<string, Context>();
+            httpClient.Timeout = TimeSpan.FromSeconds(timeoutLimit);
         }
 
         public override Task Connect()
