@@ -1,0 +1,12 @@
+E:\BackUp\Projects\LLMLibrary\LLMLibrary\bin\Release\net8.0\LLMLibrary.deps.json
+E:\BackUp\Projects\LLMLibrary\LLMLibrary\bin\Release\net8.0\LLMLibrary.dll
+E:\BackUp\Projects\LLMLibrary\LLMLibrary\bin\Release\net8.0\LLMLibrary.pdb
+E:\BackUp\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.GeneratedMSBuildEditorConfig.editorconfig
+E:\BackUp\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.AssemblyInfoInputs.cache
+E:\BackUp\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.AssemblyInfo.cs
+E:\BackUp\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.csproj.CoreCompileInputs.cache
+E:\BackUp\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.sourcelink.json
+E:\BackUp\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.dll
+E:\BackUp\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\refint\LLMLibrary.dll
+E:\BackUp\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.pdb
+E:\BackUp\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\ref\LLMLibrary.dll

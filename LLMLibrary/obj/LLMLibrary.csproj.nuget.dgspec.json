@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zim__\\OneDrive\\OneDrive Jellywase\\Coding\\LLMLibrary\\LLMLibrary\\LLMLibrary.csproj": {}
+    "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\LLMLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zim__\\OneDrive\\OneDrive Jellywase\\Coding\\LLMLibrary\\LLMLibrary\\LLMLibrary.csproj": {
+    "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\LLMLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zim__\\OneDrive\\OneDrive Jellywase\\Coding\\LLMLibrary\\LLMLibrary\\LLMLibrary.csproj",
+        "projectUniqueName": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\LLMLibrary.csproj",
         "projectName": "LLMLibrary",
-        "projectPath": "C:\\Users\\zim__\\OneDrive\\OneDrive Jellywase\\Coding\\LLMLibrary\\LLMLibrary\\LLMLibrary.csproj",
-        "packagesPath": "C:\\Users\\zim__\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zim__\\OneDrive\\OneDrive Jellywase\\Coding\\LLMLibrary\\LLMLibrary\\obj\\",
+        "projectPath": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\LLMLibrary.csproj",
+        "packagesPath": "C:\\Users\\jelly\\.nuget\\packages\\",
+        "outputPath": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\zim__\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\jelly\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -65,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

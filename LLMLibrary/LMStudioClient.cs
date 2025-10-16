@@ -93,8 +93,8 @@ namespace LLMLibrary
             context.Add(Context.Sayer.user, message);
 
             var payload = BuildContextPayload(context);
-            var response = await httpClient.PostAsJsonAsync(chatEndpoint, payload);
-            var stream = await response.Content.ReadAsStreamAsync();
+            using var response = await httpClient.PostAsJsonAsync(chatEndpoint, payload);
+            using var stream = await response.Content.ReadAsStreamAsync();
             using var responseJson = JsonDocument.Parse(stream);
             if (responseJson.RootElement.TryGetProperty("error", out var error))
             {
