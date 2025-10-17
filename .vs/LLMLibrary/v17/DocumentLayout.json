@@ -34,12 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
@@ -84,7 +80,7 @@
               "RelativeDocumentMoniker": "LLMLibrary\\LMStudioClient.cs",
               "ToolTip": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\LMStudioClient.cs",
               "RelativeToolTip": "LLMLibrary\\LMStudioClient.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAmwB0AAABvAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAA4wB0AAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-08T12:29:27.584Z",
               "EditorCaption": ""
@@ -124,6 +120,10 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-08T09:19:48.18Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         },

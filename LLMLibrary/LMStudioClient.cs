@@ -55,11 +55,10 @@ namespace LLMLibrary
                 using var json = await JsonDocument.ParseAsync(response);
                 var models = json?.RootElement.GetProperty("data").EnumerateArray().ToList();
                 if (models == null || models.Count == 0)
-                { throw new Exception("No models loaded"); }
+                { return false; }
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine("Cannot connect to LLM: " + ex.Message);
                 return false;
             }
             return true;
@@ -77,9 +76,8 @@ namespace LLMLibrary
                     {
                         return await SendUserMessageInner(chatID, message);
                     }
-                    catch (Exception ex)
+                    catch
                     {
-                        Console.WriteLine("Error in LMStudioClient: " + ex.Message);
                         throw;
                     }
                 }).Unwrap();
