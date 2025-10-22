@@ -10,3 +10,16 @@ E:\BackUp\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.dll
 E:\BackUp\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\refint\LLMLibrary.dll
 E:\BackUp\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.pdb
 E:\BackUp\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\ref\LLMLibrary.dll
+D:\Jellywase\Projects\LLMLibrary\LLMLibrary\bin\Release\net8.0\LLMLibrary.deps.json
+D:\Jellywase\Projects\LLMLibrary\LLMLibrary\bin\Release\net8.0\LLMLibrary.dll
+D:\Jellywase\Projects\LLMLibrary\LLMLibrary\bin\Release\net8.0\LLMLibrary.pdb
+D:\Jellywase\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.csproj.AssemblyReference.cache
+D:\Jellywase\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\Jellywase\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.AssemblyInfoInputs.cache
+D:\Jellywase\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.AssemblyInfo.cs
+D:\Jellywase\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.csproj.CoreCompileInputs.cache
+D:\Jellywase\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.sourcelink.json
+D:\Jellywase\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.dll
+D:\Jellywase\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\refint\LLMLibrary.dll
+D:\Jellywase\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\LLMLibrary.pdb
+D:\Jellywase\Projects\LLMLibrary\LLMLibrary\obj\Release\net8.0\ref\LLMLibrary.dll

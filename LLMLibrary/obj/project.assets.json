@@ -1,26 +1,60 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "SharpToken/2.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/SharpToken.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/SharpToken.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "SharpToken/2.0.4": {
+      "sha512": "XDRyMwQk/I75B/lkSqq0OBFfqfb3WpAYlAojbywGCb/RgwCCc6fnm6WN+C8tQn9Y/5dHxVpOEoF/+eHpFzCQCw==",
+      "type": "package",
+      "path": "sharptoken/2.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "lib/net6.0/SharpToken.dll",
+        "lib/net8.0/SharpToken.dll",
+        "lib/netstandard2.0/SharpToken.dll",
+        "sharptoken.2.0.4.nupkg.sha512",
+        "sharptoken.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "SharpToken >= 2.0.4"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\jelly\\.nuget\\packages\\": {}
+    "C:\\Users\\jelly\\.nuget\\packages\\": {},
+    "D:\\ProgramFiles\\VisualStudio\\SDK\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\LLMLibrary.csproj",
+      "projectUniqueName": "D:\\Jellywase\\Projects\\LLMLibrary\\LLMLibrary\\LLMLibrary.csproj",
       "projectName": "LLMLibrary",
-      "projectPath": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\LLMLibrary.csproj",
+      "projectPath": "D:\\Jellywase\\Projects\\LLMLibrary\\LLMLibrary\\LLMLibrary.csproj",
       "packagesPath": "C:\\Users\\jelly\\.nuget\\packages\\",
-      "outputPath": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\obj\\",
+      "outputPath": "D:\\Jellywase\\Projects\\LLMLibrary\\LLMLibrary\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\ProgramFiles\\VisualStudio\\SDK\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\jelly\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -51,6 +85,12 @@
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
+        "dependencies": {
+          "SharpToken": {
+            "target": "Package",
+            "version": "[2.0.4, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
