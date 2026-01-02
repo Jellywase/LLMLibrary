@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LSREC0va3Bw=",
+  "dgSpecHash": "yxPBc3pUlO8=",
   "success": true,
-  "projectFilePath": "D:\\Jellywase\\Projects\\LLMLibrary\\LLMLibrary\\LLMLibrary.csproj",
+  "projectFilePath": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\LLMLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jelly\\.nuget\\packages\\sharptoken\\2.0.4\\sharptoken.2.0.4.nupkg.sha512"
   ],

@@ -63,7 +63,7 @@ namespace LLMLibrary
             }
             return true;
         }
-        public override async Task<string> SendUserMessage(string chatID, string message)
+        public override async Task<string> SendUserMessage(string chatID, string message, int retry = 0)
         {
             if (!await isConnected)
             { return string.Empty; }
@@ -86,29 +86,49 @@ namespace LLMLibrary
             return await nextTask;
         }
 
-        private async Task<string> SendUserMessageInner(string chatID, string message)
+        private async Task<string> SendUserMessageInner(string chatID, string message, int retry = 0)
         {
             Context context = RegisterOrGetContext(chatID);
             context.Add(Context.Sayer.user, message);
-
-            var payload = BuildContextPayload(context);
-            using var response = await httpClient.PostAsJsonAsync(chatEndpoint, payload);
-            using var stream = await response.Content.ReadAsStreamAsync();
-            using var responseJson = JsonDocument.Parse(stream);
-            if (responseJson.RootElement.TryGetProperty("error", out var error))
-            {
-                throw new InvalidOperationException("LLM server error: " + error.GetString());
-            }
+            Exception recentResponseEX = null;
             string reply = string.Empty;
-            if (responseJson.RootElement.TryGetProperty("choices", out var choices))
-            {
-                reply = choices[0].GetProperty("message").GetProperty("content").GetString() ?? string.Empty;
-                RecordToContext(Context.Sayer.assistant, context, reply);
-            }
+            bool isSuccess = false;
 
+            for (int i = 0; i < retry + 1; i++)
+            {
+                try
+                {
+                    var payload = BuildContextPayload(context);
+                    using var response = await httpClient.PostAsJsonAsync(chatEndpoint, payload);
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        throw new HttpRequestException("LLM server request failed: " + response?.StatusCode.ToString());
+                    }
+                    using var stream = await response.Content.ReadAsStreamAsync();
+                    using JsonDocument responseJson = JsonDocument.Parse(stream);
+                    if (responseJson.RootElement.TryGetProperty("error", out var error))
+                    {
+                        throw new LLMResponseErrorException("LLM server error: " + error.GetString());
+                    }
+                    if (responseJson.RootElement.TryGetProperty("choices", out var choices) && choices.GetArrayLength() > 0)
+                    {
+                        reply = choices[0].GetProperty("message").GetProperty("content").GetString() ?? string.Empty;
+                    }
+                    isSuccess = true;
+                    break;
+                }
+                catch (Exception ex) when (ex is HttpRequestException || ex is LLMResponseErrorException)
+                {
+                    recentResponseEX = new Exception("Error generating LLM response: ", ex);
+                }
+            }
+            if (!isSuccess)
+            {
+                throw recentResponseEX;
+            }
+            RecordToContext(Context.Sayer.assistant, context, reply);
             return reply;
         }
-
         public override async Task SetSystemMessage(string chatID, string message)
         {
             if (!await isConnected)

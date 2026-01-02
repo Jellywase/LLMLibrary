@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{7391EABB-9ED3-4201-A2E3-40D900DDF027}|LLMLibrary\\LLMLibrary.csproj|solutionrelative:llmlibrary\\lmstudioclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7391EABB-9ED3-4201-A2E3-40D900DDF027}|LLMLibrary\\LLMLibrary.csproj|e:\\backup\\projects\\llmlibrary\\llmlibrary\\llmresponseerrorexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7391EABB-9ED3-4201-A2E3-40D900DDF027}|LLMLibrary\\LLMLibrary.csproj|solutionrelative:llmlibrary\\llmresponseerrorexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7391EABB-9ED3-4201-A2E3-40D900DDF027}|LLMLibrary\\LLMLibrary.csproj|e:\\backup\\projects\\llmlibrary\\llmlibrary\\searchablellm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7391EABB-9ED3-4201-A2E3-40D900DDF027}|LLMLibrary\\LLMLibrary.csproj|solutionrelative:llmlibrary\\searchablellm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,7 +54,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "LLMResponseErrorException.cs",
+              "DocumentMoniker": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\LLMResponseErrorException.cs",
+              "RelativeDocumentMoniker": "LLMLibrary\\LLMResponseErrorException.cs",
+              "ToolTip": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\LLMResponseErrorException.cs",
+              "RelativeToolTip": "LLMLibrary\\LLMResponseErrorException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvxQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T04:04:57.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ModelInfo.cs",
               "DocumentMoniker": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\ModelInfo.cs",
               "RelativeDocumentMoniker": "LLMLibrary\\ModelInfo.cs",
@@ -62,7 +79,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Context.cs",
               "DocumentMoniker": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\Context.cs",
               "RelativeDocumentMoniker": "LLMLibrary\\Context.cs",
@@ -80,26 +97,27 @@
               "RelativeDocumentMoniker": "LLMLibrary\\LMStudioClient.cs",
               "ToolTip": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\LMStudioClient.cs",
               "RelativeToolTip": "LLMLibrary\\LMStudioClient.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAA4wB0AAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAuwGYAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-08T12:29:27.584Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "SearchableLLM.cs",
               "DocumentMoniker": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\SearchableLLM.cs",
               "RelativeDocumentMoniker": "LLMLibrary\\SearchableLLM.cs",
               "ToolTip": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\SearchableLLM.cs",
               "RelativeToolTip": "LLMLibrary\\SearchableLLM.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA8wA4AAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-08T12:27:05.739Z"
+              "WhenOpened": "2025-10-08T12:27:05.739Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ISearchEngine.cs",
               "DocumentMoniker": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\ISearchEngine.cs",
               "RelativeDocumentMoniker": "LLMLibrary\\ISearchEngine.cs",
@@ -111,19 +129,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ILLMClient.cs",
               "DocumentMoniker": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\ILLMClient.cs",
               "RelativeDocumentMoniker": "LLMLibrary\\ILLMClient.cs",
               "ToolTip": "E:\\BackUp\\Projects\\LLMLibrary\\LLMLibrary\\ILLMClient.cs",
               "RelativeToolTip": "LLMLibrary\\ILLMClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-08T09:19:48.18Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "WhenOpened": "2025-10-08T09:19:48.18Z",
+              "EditorCaption": ""
             }
           ]
         },
